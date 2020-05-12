@@ -113,60 +113,8 @@
           1,
           null
         ]
-      },
-      "/home/mike/workspace/localization-react-demo-app/app/channels/application_cable/connection.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/home/mike/workspace/localization-react-demo-app/app/channels/application_cable/channel.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/home/mike/workspace/localization-react-demo-app/app/helpers/home_page_helper.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/home/mike/workspace/localization-react-demo-app/app/helpers/users_helper.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/home/mike/workspace/localization-react-demo-app/app/helpers/application_helper.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/home/mike/workspace/localization-react-demo-app/app/jobs/application_job.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1589279741
+    "timestamp": 1589280238
   }
 }
