@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-md-12 text-center">
+    <table>
+      <tr>
+        <td class="content">
+
+        <h2>We have a new user,</h2>
+
+        <h3 class="page-header">Below are the details :-
+        </h3>
+
+
+        <table class="listing">
+            <tr>
+                <td>
+                    <p>
+                        <strong>Full name: </strong> <%= @user.full_name%>
+                    </p>
+                    <p>
+                        <strong>Phone Number: </strong> <%= @user.phone_number%>
+                    </p>
+                    <%if @user.message.present?%>
+                      <p>
+                          <strong>Message: </strong> - <%= @user.message%>
+                      </p>
+                    <%end%>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>
+                        <strong>Email: </strong> <a href="mailto:<%= @user.email%>" target="_blank"><%= @user.email%></a>
+                    </p>
+                </td>
+            </tr>
+
+        </table>
+        </td>
+
+      </tr>
+
+    </table>
+  </div>
+</div>
+
