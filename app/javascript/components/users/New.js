@@ -30,6 +30,18 @@ class New extends React.Component {
     })
   }
 
+  reloadPage(time_in_ms = nil) {
+    if (Number.isInteger(time_in_ms)) {
+      setTimeout(
+        function() {
+          window.location.reload(true);
+        }
+        .bind(this),
+        parseInt(time_in_ms)
+      );
+    }
+  }
+
   handleSubmit = event => {
     this.toastId = null;
     event.preventDefault()
@@ -47,7 +59,8 @@ class New extends React.Component {
       console.log(response.data.message)
       if (response.status == 200 && response.data.message) {
           this.setState({ formSubmittedSuccessfully: true, first_name: '', last_name: '', phone_number: '', email: '', message: ''});
-          this.toastId = toast.success( response.data.message, { autoClose: 5000, pauseOnHover: true, onClose: () => window.location.reload(true) });
+          this.toastId = toast.success( response.data.message, { autoClose: 5000, pauseOnHover: true });
+          this.reloadPage(5000)
       }
     })
     .catch(error => {
@@ -61,7 +74,7 @@ class New extends React.Component {
 
   render () {
     const {
-      title, name_label, email_label,
+      change_lang_label, title, name_label, email_label,
       phone_label, message_label, btn_label, address_title, lets_talk_title,
       address, contact_number, general_support_email, general_support_title
     } = this.props.contentText;
@@ -69,6 +82,18 @@ class New extends React.Component {
     return (
       <React.Fragment>
         <div className="wrap-contact100">
+        <div className="lang-div">
+              <div className="dropdown">
+                <button className="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+                  {change_lang_label}
+                </button>
+                <div className="dropdown-menu">
+                  <a className="dropdown-item" href="?locale=en">English</a>
+                  <a className="dropdown-item" href="?locale=fr">French</a>
+                  <a className="dropdown-item" href="?locale=hi">Hindi</a>
+                </div>
+              </div>
+            </div>
             <form className="contact100-form" onSubmit={this.handleSubmit}>
               <span className="contact100-form-title">
                 {title}

@@ -1,0 +1,17 @@
+fr:
+  new_user_notification_email: Bonjour !!, nous avons un nouvel utilisateur
+  successful_submission: Vos coordonnées ont été soumises avec succès
+  contact_us_form:
+    title: Envoie-nous un message
+    address_title: Adresse
+    lets_talk_title: Parlons
+    general_support_title: Support général
+    name_label: DITES-NOUS VOTRE NOM
+    email_label: ENTRER VOTRE EMAIL
+    phone_label: ENTREZ LE NUMÉRO DE TÉLÉPHONE
+    message_label: MESSAGE
+    btn_label: ENVOYER LE MESSAGE
+    change_lang_label: Changer de langue
+  global:
+    errors:
+      phone_format: Le numéro de téléphone fourni est dans un mauvais format

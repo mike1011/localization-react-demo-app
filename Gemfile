@@ -64,3 +64,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'webpacker', '~> 4.0'
 gem 'react-rails'
 gem 'configatron'
+gem "font-awesome-rails"
