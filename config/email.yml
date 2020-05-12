@@ -1,0 +1,10 @@
+development:
+  :address: smtp.mandrillapp.com
+  :port: 25
+  :user_name: xxxxxxxxxxxxxxxxxx
+  :password: xxxxxxxxxxxxxxxx
+production:
+  :address: smtp.mandrillapp.com
+  :port: 25
+  :user_name: xxxxxxxxxxxxxxxxxx
+  :password: xxxxxxxxxxxxxxxx
