@@ -1,0 +1,109 @@
+        <div class="container-contact100">
+          <div class="wrap-contact100">
+            <div class="lang-div">
+              <div class="dropdown">
+                <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+                  {change_lang_label}
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="?locale=en">English</a>
+                  <a class="dropdown-item" href="?locale=fr">French</a>
+                  <a class="dropdown-item" href="?locale=hi">Hindi</a>
+                </div>
+              </div>
+            </div>
+            <form class="contact100-form" onSubmit={this.handleSubmit}>
+              <span class="contact100-form-title">
+                {title}
+              </span>
+
+              <label class="label-input100" htmlFor="full_name">{name_label} *</label>
+              <div class="wrap-input100 rs1-wrap-input100 ">
+                <input class="input100" value={this.state.first_name} onChange={(e) => this.setValues(e)} onBlur={() => this.validator.showMessageFor('first_name')} type="text" name="first_name" id="first_name"  placeholder="First name" required/>
+                <span class="focus-input100"></span>
+                {this.validator.message('first_name', this.state.first_name, 'required|alpha_num_dash_space|min:3|max:300', {class: 'text-danger fs-11'})}
+              </div>
+              <div class="wrap-input100 rs1-wrap-input100 ">
+                <input class="input100" value={this.state.last_name} onChange={(e) => this.setValues(e)} onBlur={() => this.validator.showMessageFor('last_name')} type="text" name="last_name" id="last_name"  placeholder="Last name" required/>
+                <span class="focus-input100"></span>
+                {this.validator.message('last_name', this.state.last_name, 'required|alpha_num_dash_space|min:3|max:300', {class: 'text-danger fs-11'})}
+              </div>
+
+
+              <label class="label-input100" htmlFor="email">{email_label} *</label>
+              <div class="wrap-input100" >
+                <input class="input100" value={this.state.email} onChange={(e) => this.setValues(e)} onBlur={() => this.validator.showMessageFor('email')} type="email" name="email" id="email"  placeholder="Eg. example@email.com" required/>
+                <span class="focus-input100"></span>
+                {this.validator.message('email', this.state.email, 'required|email', {class: 'text-danger fs-11'})}
+              </div>
+
+              <label class="label-input100" htmlFor="phone">{phone_label}</label>
+              <div class="wrap-input100">
+                <input class="input100" value={this.state.phone_number} onChange={(e) => this.setValues(e)} onBlur={() => this.validator.showMessageFor('phone_number')} type="text" name="phone_number" id="phone_number" placeholder="Eg. +1 800 000000" />
+                <span class="focus-input100"></span>
+                {this.validator.message('phone_number', this.state.phone_number, 'string', {class: 'text-danger fs-11'})}
+              </div>
+
+              <label class="label-input100" htmlFor="message">{message_label} *</label>
+              <div class="wrap-input100 validate-input" data-validate = "Message is required">
+                <textarea class="input100" value={this.state.message} onChange={(e) => this.setValues(e)} onBlur={() => this.validator.showMessageFor('message')} name="message" id="message" placeholder="Write us a message" />
+                <span class="focus-input100"></span>
+                {this.validator.message('message', this.state.message, 'alpha_num_dash_space', {class: 'text-danger fs-11'})}
+              </div>
+
+              <div class="container-contact100-form-btn">
+                <button id="submitBtn" type="submit" data-disable-with="Send Message..." disabled={this.state.formSubmittedSuccessfully} class="contact100-form-btn">{btn_label}</button>
+              </div>
+            </form>
+
+            <div class="contact100-more flex-col-c-m bg">
+              <div class="flex-w size1 p-b-47">
+                <div class="txt1 p-r-25">
+                  <span class="fa fa-map-marker"></span>
+                </div>
+
+                <div class="flex-col size2">
+                  <span class="txt1 p-b-20">
+                    {address_title}
+                  </span>
+
+                  <span class="txt3">
+                    {address}
+                  </span>
+                </div>
+              </div>
+
+              <div class="dis-flex size1 p-b-47">
+                <div class="txt1 p-r-25">
+                  <span class="fa fa-phone"></span>
+                </div>
+
+                <div class="flex-col size2">
+                  <span class="txt1 p-b-20">
+                    {lets_talk_title}
+                  </span>
+
+                  <span class="txt3">
+                    {contact_number}
+                  </span>
+                </div>
+              </div>
+
+              <div class="dis-flex size1 p-b-47">
+                <div class="txt1 p-r-25">
+                  <span class="fa fa-envelope"></span>
+                </div>
+
+                <div class="flex-col size2">
+                  <span class="txt1 p-b-20">
+                    {general_support_title}
+                  </span>
+
+                  <span class="txt3">
+                    {general_support_email}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
