@@ -50,9 +50,9 @@ Once rvm is installed, you need to setup Postgresql for the database by followin
     To run the test, run the below commands in root directory
 
     ##to test backend code
-    `rspec`
+    rspec
     ##to test frontend code
-    `npm test`
+    npm test
 
 
 **TECHNICAL DEBUGGING**
