@@ -194,7 +194,7 @@ class New extends React.Component {
 }
 
 New.propTypes = {
-  contentText: PropTypes.object.isRequired,
+  contentText: PropTypes.object,
 };
 
 

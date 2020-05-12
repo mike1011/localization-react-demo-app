@@ -1,0 +1,15 @@
+{
+  "title": "Send Us A Message",
+  "address_title": "Address",
+  "lets_talk_title": "Lets Talk",
+  "general_support_title": "General Support",
+  "name_label": "TELL US YOUR NAME",
+  "email_label": "ENTER YOUR EMAIL",
+  "phone_label": "ENTER PHONE NUMBER",
+  "message_label": "MESSAGE",
+  "btn_label": "SEND MESSAGE",
+  "change_lang_label": "Change Language",
+  "address": "Mada Center 8th floor, 379 Hudson St, New York, NY 10018 US",
+  "contact_number": "+1 800 1236879",
+  "general_support_email": "contact@example.com"
+}
