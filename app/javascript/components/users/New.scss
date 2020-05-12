@@ -1,0 +1,16 @@
+@import "../../css/main.css";
+@import "../../css/util.css";
+
+.bg{
+  background-image: url("../../images/bg-01.jpg");;
+}
+.text-danger.fs-11 {
+  text-align: left;
+  margin-left:2rem;
+}
+.lang-div {
+  position: absolute;
+  display: flex;
+  align-items: baseline;
+  flex-direction: row;
+}

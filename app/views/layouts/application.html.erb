@@ -4,12 +4,14 @@
     <title>LocalizationReactDemoApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= favicon_link_tag asset_path("icons/favicon.ico") %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
     <%= javascript_pack_tag 'application' %>
   </body>
 </html>
