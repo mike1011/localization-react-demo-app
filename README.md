@@ -45,14 +45,16 @@ Once rvm is installed, you need to setup Postgresql for the database by followin
 
 **Testing**
 
-  The application [rspec-rails](https://github.com/rspec/rspec-rails) to test backend code developed using Ruby on Rails and additionally uses [jest](https://jestjs.io/en/), [enzyme](https://github.com/enzymejs/enzyme) to test frontend code developed using Reactjs components. Is also generates coverage report, at the root directory of `coverage/index.html` for backend code coverage and `coverage/lcov-report/index.html` for front end code coverage
+  The application [rspec-rails](https://github.com/rspec/rspec-rails) to test backend code developed using Ruby on Rails and additionally uses [jest](https://jestjs.io/en/), [enzyme](https://github.com/enzymejs/enzyme) to test frontend code developed using Reactjs components. Is also generates coverage report, at the root directory of `coverage/index.html` for backend code coverage and `coverage/lcov-report/index.html` for front end code coverage.
+  File attached - 
+  [front end coverage report](https://github.com/mike1011/localization-react-demo-app/blob/master/coverage_report_using_jest.png) and [backend coverage report](https://github.com/mike1011/localization-react-demo-app/blob/master/coverage_report_using_rspec.png)
 
     To run the test, run the below commands in root directory
 
     ##to test backend code
-    `rspec`
+    rspec
     ##to test frontend code
-    `npm test`
+    npm test
 
 
 **TECHNICAL DEBUGGING**
