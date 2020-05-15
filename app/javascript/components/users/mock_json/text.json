@@ -1,15 +1,25 @@
 {
-  "title": "Send Us A Message",
-  "address_title": "Address",
-  "lets_talk_title": "Lets Talk",
-  "general_support_title": "General Support",
-  "name_label": "TELL US YOUR NAME",
-  "email_label": "ENTER YOUR EMAIL",
-  "phone_label": "ENTER PHONE NUMBER",
-  "message_label": "MESSAGE",
-  "btn_label": "SEND MESSAGE",
-  "change_lang_label": "Change Language",
-  "address": "Mada Center 8th floor, 379 Hudson St, New York, NY 10018 US",
-  "contact_number": "+1 800 1236879",
-  "general_support_email": "contact@example.com"
+  "form": {
+    "contact_us": {
+      "title": "Send Us A Message",
+      "address": "Address",
+      "lets_talk": "Lets Talk",
+      "general_support": "General Support",
+      "input": {
+        "label": {
+          "name": "TELL US YOUR NAME",
+          "email": "ENTER YOUR EMAIL",
+          "phone": "ENTER PHONE NUMBER",
+          "message": "MESSAGE",
+          "submit_btn": "SEND MESSAGE",
+          "change_lang_btn": "Change Language"
+        },
+        "placeholder": {
+          "message": "Write us a message",
+          "first_name": "First name",
+          "last_name": "Last name"
+        }
+      }
+    }
+  }
 }

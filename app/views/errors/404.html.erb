@@ -1,0 +1,24 @@
+<div id="error_wrapper">
+  <div class="row page_not_found ">
+    <div class="col-sm-12">
+      <div id="text_container" class="border border-danger mb-3">
+        <div class="p-4">
+          <div class="jumbotron">
+            404
+            <span class="d-block">
+              <div>
+                Page Not Found
+              </div>
+            </span>
+          </div>
+          <p class="text-muted">
+            The page that you are looking for was not found.Kindly have a check for a typing or spelling mistake and try again.
+          </p>
+        </div>
+      </div>
+      <%= link_to "Go Back".html_safe, :back, :class=>"btn btn-flat btn-outline-primary" %>
+      <%= link_to "Go to Home page".html_safe, :root, :class=>"btn btn-flat btn-outline-primary" %>
+    </div>
+  </div>
+</div>
+

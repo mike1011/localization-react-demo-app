@@ -1,17 +1,24 @@
 en:
   new_user_notification_email: Hello!!, We got a new user
   successful_submission: Your details are submitted succesfully
-  contact_us_form:
-    title: Send Us A Message
-    address_title: Address
-    lets_talk_title: Lets Talk
-    general_support_title: General Support
-    name_label: TELL US YOUR NAME
-    email_label: ENTER YOUR EMAIL
-    phone_label: ENTER PHONE NUMBER
-    message_label: MESSAGE
-    btn_label: SEND MESSAGE
-    change_lang_label: Change Language
+  form:
+    contact_us:
+      title: Send Us A Message
+      address: Address
+      lets_talk: Lets Talk
+      general_support: General Support
+      input:
+        label:
+          name: TELL US YOUR NAME
+          email: ENTER YOUR EMAIL
+          phone: ENTER PHONE NUMBER
+          message: MESSAGE
+          submit_btn: SEND MESSAGE
+          change_lang_btn: Change Language
+        placeholder:
+          message: Write us a message
+          first_name: First name
+          last_name: Last name
   global:
     errors:
       phone_format: The provided phone number is in a wrong format

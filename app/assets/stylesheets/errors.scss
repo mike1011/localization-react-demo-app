@@ -1,0 +1,113 @@
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+
+
+#error_wrapper{
+	padding:0;
+	margin:0;
+  height: 100%;
+  width: 100%;
+}
+.page_not_found, .server_error, .unprocessable_entity {
+	text-align: center;
+  /*border: 2px solid #f10808;*/
+  padding: 50px;
+  color:#ddd;
+}
+
+a {
+    text-decoration: none;
+}
+@media screen and (max-width: 768px) {
+	.page_not_found, .server_error, .unprocessable_entity {
+   	width:100%;
+	}
+}
+/*@import url('https://fonts.googleapis.com/css?family=Roboto:700');*/
+
+
+#text_container {
+  color:#f00707;
+  text-transform: uppercase;
+  font-size:36px;
+  font-weight:bold;
+  /*padding-top:200px;  */
+  position:relative;
+  width:100%;
+  /*bottom:45%;*/
+  display:block;
+    padding-bottom: 40px;
+    /*border-bottom: 1px solid #aaa;  */
+}
+
+#flip {
+  height:50px;
+  overflow:hidden;
+}
+
+#flip > div > div {
+  color:#fff;
+  padding:4px 12px;
+  height:45px;
+  margin-bottom:45px;
+  display:inline-block;
+}
+
+#flip div:first-child {
+  animation: show 5s linear infinite;
+}
+
+#flip div div {
+  background:#42c58a;
+}
+#flip div:first-child div {
+  background:#4ec7f3;
+}
+#flip div:last-child div {
+  background:#DC143C;
+}
+
+@keyframes show {
+  0% {margin-top:-270px;}
+  5% {margin-top:-180px;}
+  33% {margin-top:-180px;}
+  38% {margin-top:-90px;}
+  66% {margin-top:-90px;}
+  71% {margin-top:0px;}
+  99.99% {margin-top:0px;}
+  100% {margin-top:-270px;}
+}

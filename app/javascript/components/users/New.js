@@ -18,7 +18,7 @@ class New extends React.Component {
       formSubmittedSuccessfully: false,
       responseMessage: ''
     };
-
+    //ready to validate the inputs
     this.validator = new SimpleReactValidator({autoForceUpdate: this});
 
   }
@@ -46,7 +46,7 @@ class New extends React.Component {
     this.toastId = null;
     event.preventDefault()
     const { first_name, last_name, email, phone_number, message } = this.state
-    //prepare the payload
+    //prepare the payload in the way needed by Rails
 		const body = new FormData()
 		body.append('user[first_name]', first_name)
 		body.append('user[last_name]', last_name);
@@ -74,18 +74,17 @@ class New extends React.Component {
 
   render () {
     const {
-      change_lang_label, title, name_label, email_label,
-      phone_label, message_label, btn_label, address_title, lets_talk_title,
-      address, contact_number, general_support_email, general_support_title
-    } = this.props.contentText;
+      input, address, full_address, lets_talk, title,
+      contact_number, general_support_email, general_support
+    } = this.props.contentText
 
     return (
       <React.Fragment>
-        <div className="wrap-contact100">
+       <div className="wrap-contact100">
         <div className="lang-div">
               <div className="dropdown">
                 <button className="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-                  {change_lang_label}
+                  {input.label.change_lang_btn}
                 </button>
                 <div className="dropdown-menu">
                   <a className="dropdown-item" href="?locale=en">English</a>
@@ -99,42 +98,42 @@ class New extends React.Component {
                 {title}
               </span>
 
-              <label className="label-input100" htmlFor="full_name">{name_label} *</label>
+              <label className="label-input100" htmlFor="full_name">{input.label.name} *</label>
               <div className="wrap-input100 rs1-wrap-input100 ">
-                <input className="input100" value={this.state.first_name} onChange={(e) => this.setValues(e)} onBlur={() => this.validator.showMessageFor('first_name')} type="text" name="first_name" id="first_name"  placeholder="First name" required/>
+                <input className="input100" value={this.state.first_name} onChange={(e) => this.setValues(e)} onBlur={() => this.validator.showMessageFor('first_name')} type="text" name="first_name" id="first_name"  placeholder={input.placeholder.first_name} required/>
                 <span className="focus-input100"></span>
                 {this.validator.message('first_name', this.state.first_name, 'required|alpha_num_dash_space|min:3|max:300', {className: 'text-danger fs-11'})}
               </div>
               <div className="wrap-input100 rs1-wrap-input100 ">
-                <input className="input100" value={this.state.last_name} onChange={(e) => this.setValues(e)} onBlur={() => this.validator.showMessageFor('last_name')} type="text" name="last_name" id="last_name"  placeholder="Last name" required/>
+                <input className="input100" value={this.state.last_name} onChange={(e) => this.setValues(e)} onBlur={() => this.validator.showMessageFor('last_name')} type="text" name="last_name" id="last_name"  placeholder={input.placeholder.last_name} required/>
                 <span className="focus-input100"></span>
                 {this.validator.message('last_name', this.state.last_name, 'required|alpha_num_dash_space|min:3|max:300', {className: 'text-danger fs-11'})}
               </div>
 
 
-              <label className="label-input100" htmlFor="email">{email_label} *</label>
+              <label className="label-input100" htmlFor="email">{input.label.email} *</label>
               <div className="wrap-input100" >
                 <input className="input100" value={this.state.email} onChange={(e) => this.setValues(e)} onBlur={() => this.validator.showMessageFor('email')} type="email" name="email" id="email"  placeholder="Eg. example@email.com" required/>
                 <span className="focus-input100"></span>
                 {this.validator.message('email', this.state.email, 'required|email', {className: 'text-danger fs-11'})}
               </div>
 
-              <label className="label-input100" htmlFor="phone">{phone_label}</label>
+              <label className="label-input100" htmlFor="phone">{input.label.phone}</label>
               <div className="wrap-input100">
                 <input className="input100" value={this.state.phone_number} onChange={(e) => this.setValues(e)} onBlur={() => this.validator.showMessageFor('phone_number')} type="text" name="phone_number" id="phone_number" placeholder="Eg. +1 800 000000" />
                 <span className="focus-input100"></span>
                 {this.validator.message('phone_number', this.state.phone_number, 'string', {className: 'text-danger fs-11'})}
               </div>
 
-              <label className="label-input100" htmlFor="message">{message_label} *</label>
+              <label className="label-input100" htmlFor="message">{input.label.message} *</label>
               <div className="wrap-input100 validate-input" data-validate = "Message is required">
-                <textarea className="input100" value={this.state.message} onChange={(e) => this.setValues(e)} onBlur={() => this.validator.showMessageFor('message')} name="message" id="message" placeholder="Write us a message" />
+                <textarea className="input100" value={this.state.message} onChange={(e) => this.setValues(e)} onBlur={() => this.validator.showMessageFor('message')} name="message" id="message" placeholder={input.placeholder.message} />
                 <span className="focus-input100"></span>
                 {this.validator.message('message', this.state.message, 'alpha_num_dash_space', {className: 'text-danger fs-11'})}
               </div>
 
               <div className="container-contact100-form-btn">
-                <button id="submitBtn" type="submit" data-disable-with="Send Message..." disabled={this.state.formSubmittedSuccessfully} className="contact100-form-btn">{btn_label}</button>
+                <button id="submitBtn" type="submit" data-disable-with="Send Message..." disabled={this.state.formSubmittedSuccessfully} className="contact100-form-btn">{input.label.submit_btn}</button>
               </div>
             </form>
 
@@ -146,11 +145,11 @@ class New extends React.Component {
 
                 <div className="flex-col size2">
                   <span className="txt1 p-b-20">
-                    {address_title}
+                    {address}
                   </span>
 
                   <span className="txt3">
-                    {address}
+                    {full_address}
                   </span>
                 </div>
               </div>
@@ -162,7 +161,7 @@ class New extends React.Component {
 
                 <div className="flex-col size2">
                   <span className="txt1 p-b-20">
-                    {lets_talk_title}
+                    {lets_talk}
                   </span>
 
                   <span className="txt3">
@@ -178,7 +177,7 @@ class New extends React.Component {
 
                 <div className="flex-col size2">
                   <span className="txt1 p-b-20">
-                    {general_support_title}
+                    {general_support}
                   </span>
 
                   <span className="txt3">

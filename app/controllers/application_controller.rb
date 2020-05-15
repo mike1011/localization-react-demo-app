@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-
+  ##lets skip authentication for api requests using json
   skip_before_action :verify_authenticity_token, if: :json_request?
   helper_method :get_current_translations
 
@@ -7,11 +7,10 @@ class ApplicationController < ActionController::Base
     I18n.locale = params[:locale] || I18n.default_locale
   end
 
-  def get_current_translations
-    I18n.t("contact_us_form", locale: current_locale)
-    .merge(address: configatron.address)
-    .merge(contact_number: configatron.contact_number)
-    .merge(general_support_email: configatron.general_support_email)
+  ##added arguments so that It can be used to fetch other strings too, if needed
+  def get_current_translations(contentText = nil)
+    contentText ||= "form.contact_us"
+    I18n.t(contentText, locale: current_locale)
   end
 
   def json_request?

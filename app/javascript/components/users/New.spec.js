@@ -18,7 +18,7 @@ describe('New User component',() =>{
   let wrapper, firstNameInputElement, lastNameInputElement, emailInputElement, phoneNumberInputElement,
       messageInputElement, labelFullName, labelEmail, inputFirstName, inputLastName, inputEmail;
   beforeEach(() => {
-    wrapper = shallow(<NewUserPage contentText={mockJsonText} />)
+    wrapper = shallow(<NewUserPage contentText={mockJsonText.form.contact_us} />)
     firstNameInputElement = shallow(<input id="first_name" onChange={(e) => onsetValuesMock(e)} value="foo" />);
     lastNameInputElement = shallow(<input id="last_name"  value="bar" />);
     emailInputElement = shallow(<input id="email"  value="foo@bar.com" />);
@@ -115,8 +115,8 @@ describe('New User component',() =>{
     wrapper.find('form').simulate('submit', fakeEvent);
 
     const body = new FormData()
-		body.append('user[first_name]', "foo")
-		body.append('user[last_name]', "bar");
+    body.append('user[first_name]', "foo")
+    body.append('user[last_name]', "bar");
     body.append('user[email]', "foo@bar.com");
     body.append('user[phone_number]', "+1 123456789");
     body.append('user[message]', "Lets test this message");
@@ -133,25 +133,24 @@ describe('New User component',() =>{
   })
 
   it('should give error on submitting the form', async () => {
-    mockAxios.post.mockImplementationOnce(() =>
+    mockAxios.post.mockRejectedValueOnce(() =>
       Promise.reject(new Error("You have an error!")),
     )
 
     wrapper.instance().forceUpdate();
-    wrapper.find('#first_name').simulate('change', {target: {name: 'first_name', value: 'Foo'}});
+    wrapper.find('#first_name').simulate('change', {target: {name: 'first_name', value: ' '}});
     wrapper.find('form').simulate('submit', fakeEvent);
 
     const body = new FormData()
-		body.append('user[first_name]', "foo")
+    body.append('user[first_name]', "")
 
     //explicitly set a delay
     setTimeout(()=> {
-      expect(mockAxios.post).toHaveBeenCalledTimes(1)
+      expect(mockAxios.post(body)).toHaveBeenCalledTimes(1)
       expect(wrapper.state().formSubmittedSuccessfully).not.toBeTruthy();
     })
 
   })
-
 
 
 })

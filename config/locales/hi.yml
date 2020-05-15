@@ -2,17 +2,24 @@
 hi:
   new_user_notification_email: नमस्ते !!, हमें एक नया उपयोगकर्ता मिला
   successful_submission: आपके विवरण सफलतापूर्वक प्रस्तुत किए जाते हैं
-  contact_us_form:
-    title: हमें एक संदेश भेजें
-    address_title: पता
-    lets_talk_title: बात करते हैं
-    general_support_title: सामान्य समर्थन
-    name_label: अपना नाम बताएं
-    email_label: अपना ईमेल दर्ज करें
-    phone_label: फोन नंबर दर्ज
-    message_label: संदेश
-    btn_label: मेसेज भेजें
-    change_lang_label: भाषा बदलो
+  form:
+    contact_us:
+      title: हमें एक संदेश भेजें
+      address: पता
+      lets_talk: बात करते हैं
+      general_support: सामान्य समर्थन
+      input:
+        label:
+          name: अपना नाम बताएं
+          email: अपना ईमेल दर्ज करें
+          phone: फोन नंबर दर्ज
+          message: संदेश
+          submit_btn: मेसेज भेजें
+          change_lang_btn: भाषा बदलो
+        placeholder:
+          message: हमें एक संदेश लिखें
+          first_name: पहला नाम
+          last_name: उपनाम
   global:
     errors:
       phone_format: प्रदान किया गया फोन नंबर एक गलत प्रारूप में है

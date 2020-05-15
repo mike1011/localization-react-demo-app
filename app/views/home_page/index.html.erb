@@ -1,2 +1,6 @@
-<%= react_component 'home_page/Index', { content: get_current_translations}%>
+<%= react_component 'home_page/Index', {
+    content: get_current_translations.merge(full_address: configatron.address)
+    .merge(contact_number: configatron.contact_number)
+    .merge(general_support_email: configatron.general_support_email)}
+%>
 

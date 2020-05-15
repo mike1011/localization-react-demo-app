@@ -7,7 +7,7 @@ module.exports = {
       }
   }),
   post: jest.fn((url) => {
-      if (url === '/something') {
+      if (url === '/users') {
           return Promise.resolve({
               data: 'data'
           });
